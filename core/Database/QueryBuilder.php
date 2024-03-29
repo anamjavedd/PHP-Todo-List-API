@@ -54,8 +54,6 @@ class QueryBuilder
         }
 
     }
-
-    // Update method signature to include $whereClause and its parameters
     public function update($table, $parameters, $whereClause, $whereParameters)
     {
         $setParts = [];
