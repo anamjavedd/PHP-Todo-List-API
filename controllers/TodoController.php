@@ -68,8 +68,8 @@ class TodoController
                 'description' => $data['description'],
                 'completed' => $data['completed']
             ], // Parameters to update
-            "id = :id", // WHERE clause
-            ['id' => $id] // Parameters for WHERE clause
+            "id = $id", // WHERE clause
+            //['id' => $id] // Parameters for WHERE clause
         );
 
         if ($updateSuccessful) {

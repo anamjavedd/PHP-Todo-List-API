@@ -54,7 +54,7 @@ class QueryBuilder
         }
 
     }
-    public function update($table, $parameters, $whereClause, $whereParameters)
+    public function update($table, $parameters, $whereClause)
     {
         $setParts = [];
         foreach ($parameters as $key => $value) {
@@ -71,11 +71,11 @@ class QueryBuilder
         );
 
         // Merge parameters for set values and where clause
-        $allParameters = array_merge($parameters, $whereParameters);
+        // $allParameters = array_merge($parameters, $whereParameters);
 
         // Prepare and execute the query
         $statement = $this->pdo->prepare($sql);
-        foreach ($allParameters as $key => &$value) {
+        foreach ($parameters as $key => &$value) {
             $statement->bindParam(":{$key}", $value);
         }
 

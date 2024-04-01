@@ -44,7 +44,7 @@ class Router
 
     public function direct($uri, $requestType)
     {
-        var_dump('Requested URI: ' . $uri);
+        var_dump('Requested URI: ' . $uri, $this->routes[$requestType]);
 
         foreach ($this->routes[$requestType] as $route => $controller) {
            
